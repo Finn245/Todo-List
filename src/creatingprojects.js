@@ -7,3 +7,6 @@ const projects = [
 ];
 
 export { projects };
+import { saveToLocalStorage ,loadFromLocalStorage } from "./localStorage"
+/*saveToLocalStorage(projects)
+loadFromLocalStorage();*/

@@ -5,12 +5,17 @@
     --container-background-color: #fff;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
     --border-color: #ccc;
+    --font:Roboto;
+}
+@font-face {
+    font-family: Roboto;
+    src: url('../assets/Roboto-Medium.ttf') ;
 }
 
 body {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    font-family: Arial, sans-serif;
+    font-family: var(--font), sans-serif;
     min-height: 100vh;
     background-color: var(--background-color);
 }
@@ -18,8 +23,8 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    max-height: 70vh;
-    gap: 20px;
+    min-height: 40vh;
+    gap: 10px;
     margin: 20px auto;
     padding: 20px;
     background-color: var(--container-background-color);
@@ -34,16 +39,16 @@ body {
 
 h1 {
     color: var(--primary-color);
-    font-size: 35px;
+    font-size: 2.1875em; /* 35px converted to em */
 }
 
-.todo-btn {
-    padding: 10px 20px;
+.todo-btn  {
+    padding: 0.625em 1.25em; /* 10px 20px converted to em */
     border: none;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 0.3125em 0.3125em 0;
     background-color: var(--primary-color);
     color: #fff;
-    font-size: 16px;
+    font-size: 1em; /* 16px converted to em */
     cursor: pointer;
 }
 
@@ -55,32 +60,154 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+    padding: 0.625em;
+    border-bottom: 0.0625em solid var(--border-color);
 }
 
 .todo-input {
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    padding: 0.625em;
+    border: 0.0625em solid var(--border-color);
+    border-radius: 0.3125em;
+    font-size: 1em; /* 16px converted to em */
+    margin-bottom: 0.625em; /* 10px converted to em */
 }
 
 .project {
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25em; /* 20px converted to em */
+    padding: 1.25em;
 }
 
 .project:hover {
     background-color: var(--background-color);
+    cursor: pointer;
 }
 
 img {
-    font-size: 35px;
+    font-size: 1em;
 }
 
 .todo-main {
-    padding: 20px;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25em;
+}
+
+.faq img {
+    height: 6em;
+}
+
+label {
+    display: block;
+    width: 12.5em; /* 200px converted to em */
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px; /* 500px converted to em */
+    background-color: var(--background-color);
+    border: 0.0625em solid var(--border-color);
+    border-radius: 0.25em;
+    padding: 0.625em;
+    box-shadow: 0 0 0.625em var(--box-shadow-color);
+    z-index: 1;
+}
+
+/* Button Styles */
+.modal button {
+    padding: 0.625em 1.25em;
+    border: none;
+    border-radius: 0.3125em;
+    background-color: var(--primary-color); /* Pink color */
+    color: #fff;
+    font-size: 1em; /* 16px converted to em */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.625em; /* Add some margin for spacing */
+}
+
+.modal .close-modal {
+    background-color: transparent;
+    color: var(--primary-color); /* Pink color */
+    border: none;
+    font-size: 1em; /* 16px converted to em */
+    cursor: pointer;
+}
+
+.task-content {
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px; /* 200px converted to em */
+}
+
+.task-item {
+    background-color: var(--container-background-color);
+    border-left: 0.3125em solid var(--primary-color);
+    display: flex;
+    border-radius: 0.4375em;
+    padding: 0.9375em;
+    margin-bottom: 0.9375em;
+    min-width: 200px;
+    gap: 1.25em; /* 20px converted to em */
+}
+
+.task-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 2em; /* 32px converted to em */
+    font-weight: bold;
+    margin-bottom: 0.3125em; /* 5px converted to em */
+}
+
+.description {
+    color: var(--border-color);
+    font-size: 1em; /* 16px converted to em */
+}
+
+.due-date {
+    font-size: 0.875em; /* 14px converted to em */
+    color: var(--primary-color);
+}
+
+.priority {
+    font-size: 0.875em; /* 14px converted to em */
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: auto;
+}
+
+.delete-task-btn {
+    background-color: #ff3d00; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-task-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .task-item{
+        display: flex;
+        flex-direction: column;
+    }
 }

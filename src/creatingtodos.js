@@ -6,6 +6,6 @@ export function createTask(title, description, dueDate, priority, notes, checkli
         dueDate,
         priority,
         notes,
-        checklist
+        
     };
 }
