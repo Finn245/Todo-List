@@ -20,8 +20,8 @@ var projects = [{
 }];
 
 
-/*saveToLocalStorage(projects)
-loadFromLocalStorage();*/
+(0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.saveToLocalStorage)(projects);
+(0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.loadFromLocalStorage)();
 
 /***/ }),
 
@@ -1474,4 +1474,4 @@ console.log(_creatingprojects_js__WEBPACK_IMPORTED_MODULE_3__.projects);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle343fc7c4b2e654f12c41.js.map
+//# sourceMappingURL=bundle5e401748109169aa824f.js.map
