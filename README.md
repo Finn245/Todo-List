@@ -7,3 +7,5 @@ Welcome to my To-Do List Application! This application is designed to help you m
 *Delete Tasks: Remove tasks from projects when they're no longer needed.
 *Responsive Design: Access your to-do list seamlessly from any device, whether it's a desktop, tablet, or mobile phone.
 *Local Storage: Your projects and tasks are saved locally in your browser, ensuring that your data persists even if you close the application.
+# Live Preview
+https://finn245.github.io/Todo-List/
